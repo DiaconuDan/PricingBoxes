@@ -16,10 +16,13 @@ describe("Box component", () => {
 
     render(<Box featureList={featureList} buttonText={buttonText} level={level}  />);
 
- 
-    expect(screen.getByText("Access to 10,000 of the team’s most recent messages")).toBeInTheDocument();
-    expect(screen.getByText("10 integrations with other apps like Google Drive, Office 365, and more")).toBeInTheDocument();
-    expect(screen.getByText("PremiumTest")).toBeInTheDocument();
+    
+    featureList.forEach( feature=> {
+      expect(screen.getByText(feature)).toBeInTheDocument();
+    })
+   
+    expect(screen.getByText(buttonText)).toBeInTheDocument();
+    expect(screen.getByText(level)).toBeInTheDocument();
   
   });
 
@@ -60,13 +63,11 @@ describe("Box component", () => {
 
 
     expect(expandDiv).toBeInTheDocument();
-    
-
 
   
   });
 
-  test("expand functionality should work as expected for small lists of features", () => {
+  test("expand functionality should not be shown for small lists of features", () => {
 
     const featureList = [
         "Access to 10,000 of the team’s most recent messages",

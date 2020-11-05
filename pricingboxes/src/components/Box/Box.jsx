@@ -25,7 +25,7 @@ const Box = ({ level, buttonText, featureList}) => {
                     {trimmedFeatures.map(feature => <li> {feature} </li>)}
                 </ul>
                 {isExpandableBox && <div class="box-expansion" onClick={handleExpandableClick}> {isExpanded ? 'See less...' : 'See more...'} </div>}
-                <a class="button"> {buttonText}</a>
+                <button class="button"> {buttonText}</button>
             </div>
         </div>)
 }

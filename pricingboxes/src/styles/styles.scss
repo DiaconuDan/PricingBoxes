@@ -45,10 +45,6 @@ li {
       @media all and (max-width: 700px) {
         margin-top: 10px;
       }
-      .button {
-        padding: 20px;
-        font-size: 35px;
-      }
       
     }
     @media all and (max-width: 700px) {
@@ -99,6 +95,7 @@ li {
       display: block;
       color: white;
       text-decoration: none;
+      border: none;
     }
   }
 }

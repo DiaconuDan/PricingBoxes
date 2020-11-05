@@ -1,7 +1,7 @@
 import React from 'react';
-import './styles.scss';
-import Box from '../components/PricingTable/Box';
-import { data } from './data';
+import './../styles/styles.scss';
+import Box from '../components/Box/Box';
+import { data } from '../utils/data';
 
 
 const PricingTable = () => {

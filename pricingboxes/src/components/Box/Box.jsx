@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Box = ({ level, buttonText, featureList }) => {
+const Box = ({ level, buttonText, featureList}) => {
     const [featuresDisplayed, setFeaturesDisplayed] = useState(8);
     const [isExpanded, setIsExpanded] = useState(false);
 
@@ -24,9 +24,8 @@ const Box = ({ level, buttonText, featureList }) => {
                 <ul class="box-features">
                     {trimmedFeatures.map(feature => <li> {feature} </li>)}
                 </ul>
-               
-                {isExpandableBox && <div class="box-price" onClick={handleExpandableClick}> {isExpanded ? 'See less...' : 'See more...'} </div>}
-                <a class="button" href="#"> {buttonText}</a>
+                {isExpandableBox && <div class="box-expansion" onClick={handleExpandableClick}> {isExpanded ? 'See less...' : 'See more...'} </div>}
+                <a class="button"> {buttonText}</a>
             </div>
         </div>)
 }

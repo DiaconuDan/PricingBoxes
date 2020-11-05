@@ -1,5 +1,5 @@
 import React from "react";
-import { queryByText, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import Box from "../Box";
 
 describe("Box component", () => {
@@ -64,5 +64,21 @@ describe("Box component", () => {
 
 
   
+  });
+
+  test("expand functionality should work as expected for small lists of features", () => {
+
+    const featureList = [
+        "Access to 10,000 of the team’s most recent messages",
+    ]
+    const buttonText = "Test" ;
+    const level = "PremiumTest" ;
+
+
+    render(<Box featureList={featureList} buttonText={buttonText} level={level}  />);
+
+    expect(screen.queryByText("See less...")).toBeNull();
+    expect(screen.queryByText("See more...")).toBeNull();
+
   });
 });

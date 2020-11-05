@@ -46,4 +46,6 @@ export const data = {
 };
 
 
+export const maximumInitialFeatures = 8;
+
 

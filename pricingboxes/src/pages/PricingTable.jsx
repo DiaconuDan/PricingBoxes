@@ -8,9 +8,10 @@ const PricingTable = () => {
     return (
         <div class="table">
             {data.boxes.map(box => {
-        return <Box level={box.level} featureList={box.featureList} buttonText={box.buttonText} />
-    })}
-        </div>)
+                return <Box level={box.level} featureList={box.featureList} buttonText={box.buttonText} />
+            })}
+        </div>
+    );
 }
 
 export default PricingTable;

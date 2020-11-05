@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
+import {maximumInitialFeatures} from '../../utils/data' ;
 
-const Box = ({ level, buttonText, featureList}) => {
-    const [featuresDisplayed, setFeaturesDisplayed] = useState(8);
+const Box = ({ level, buttonText, featureList }) => {
+    const [maxFeaturesDisplayed, setMaxFeaturesDisplayed] = useState(maximumInitialFeatures);
     const [isExpanded, setIsExpanded] = useState(false);
 
-    const isExpandableBox = featureList.length > 8;
-    const trimmedFeatures = isExpanded ? featureList : featureList.filter((feature, index) => index < featuresDisplayed);
+    const isExpandableBox = featureList.length > maximumInitialFeatures;
+    const trimmedFeatures = isExpanded ? featureList : featureList.filter((feature, index) => index < maxFeaturesDisplayed);
 
     const handleExpandableClick = () => {
         if (isExpanded) {
             setIsExpanded(false);
-            setFeaturesDisplayed(8);
+            setMaxFeaturesDisplayed(maximumInitialFeatures);
         } else {
             setIsExpanded(true);
-            setFeaturesDisplayed(featureList.length);
+            setMaxFeaturesDisplayed(featureList.length);
         }
     };
 
@@ -27,7 +28,8 @@ const Box = ({ level, buttonText, featureList}) => {
                 {isExpandableBox && <div class="box-expansion" onClick={handleExpandableClick}> {isExpanded ? 'See less...' : 'See more...'} </div>}
                 <button class="button"> {buttonText}</button>
             </div>
-        </div>)
+        </div>
+    )
 }
 
 export default Box;
